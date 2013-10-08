@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BM\EventosBundle\Entity\Evento" table="evento">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="titulo" type="string" column="titulo" length="45" nullable="false"/>
+    <field name="descricao" type="string" column="descricao" length="45" nullable="false"/>
+    <field name="localidade" type="string" column="localidade" length="45" nullable="false"/>
+    <field name="dataInicio" type="datetime" column="data_inicio" nullable="false"/>
+    <field name="dataInicioInscricoes" type="datetime" column="data_inicio_inscricoes" nullable="false"/>
+    <field name="dataFimInscricoes" type="datetime" column="data_fim_inscricoes" nullable="false"/>
+    <field name="cartaz" type="string" column="cartaz" length="45" nullable="false"/>
+    <field name="limiteInscritos" type="integer" column="limite_inscritos" nullable="true"/>
+    <many-to-one field="idEventoTipo" target-entity="EventoTipo">
+      <join-columns>
+        <join-column name="id_evento_tipo" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idEventoEstado" target-entity="EventoEstado">
+      <join-columns>
+        <join-column name="id_evento_estado" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>
