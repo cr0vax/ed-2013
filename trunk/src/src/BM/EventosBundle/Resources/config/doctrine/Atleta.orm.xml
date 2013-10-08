@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BM\EventosBundle\Entity\Atleta" table="atleta">
+    <id name="bi" type="string" column="bi" length="45">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nome" type="string" column="nome" length="150" nullable="false"/>
+    <field name="dataNascimento" type="datetime" column="data_nascimento" nullable="false"/>
+    <field name="morada" type="string" column="morada" length="100" nullable="false"/>
+    <field name="codigoPostal" type="string" column="codigo_postal" length="8" nullable="false"/>
+    <field name="localidade" type="string" column="localidade" length="100" nullable="false"/>
+    <field name="nif" type="string" column="nif" length="9" nullable="false"/>
+    <field name="sexo" type="string" column="sexo" length="1" nullable="false"/>
+    <field name="telefone" type="string" column="telefone" length="9" nullable="false"/>
+    <field name="equipa" type="string" column="equipa" length="150" nullable="false"/>
+    <field name="email" type="string" column="email" length="100" nullable="false"/>
+    <field name="newsletter" type="integer" column="newsletter" nullable="false"/>
+  </entity>
+</doctrine-mapping>

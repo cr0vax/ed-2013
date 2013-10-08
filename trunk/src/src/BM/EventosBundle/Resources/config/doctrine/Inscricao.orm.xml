@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="BM\EventosBundle\Entity\Inscricao" table="inscricao">
+    <id name="id" type="integer" column="id">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="dataInscricao" type="datetime" column="data_inscricao" nullable="false"/>
+    <field name="tempo" type="datetime" column="tempo" nullable="true"/>
+    <many-to-one field="idPercurso" target-entity="Percurso">
+      <join-columns>
+        <join-column name="id_percurso" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idProvaEstado" target-entity="ProvaEstado">
+      <join-columns>
+        <join-column name="id_prova_estado" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idOpcao" target-entity="Opcao">
+      <join-columns>
+        <join-column name="id_opcao" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idInscricaoEstado" target-entity="InscricaoEstado">
+      <join-columns>
+        <join-column name="id_inscricao_estado" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idEvento" target-entity="Evento">
+      <join-columns>
+        <join-column name="id_evento" referenced-column-name="id"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="biAtleta" target-entity="Atleta">
+      <join-columns>
+        <join-column name="bi_atleta" referenced-column-name="bi"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

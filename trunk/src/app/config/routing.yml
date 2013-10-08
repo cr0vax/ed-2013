@@ -1,0 +1,5 @@
+bm_eventos:
+    resource: "@BMEventosBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
